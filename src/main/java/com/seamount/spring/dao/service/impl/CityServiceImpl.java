@@ -1,0 +1,106 @@
+package com.seamount.spring.dao.service.impl;
+
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+
+import com.seamount.spring.dao.mapper.CityMapper;
+import com.seamount.spring.dao.model.CityModel;
+import com.seamount.spring.dao.service.CityService;
+
+@Service("cityServiceImpl")
+public class CityServiceImpl implements CityService {
+	
+	@Autowired
+	private CityMapper cityMapper;
+	
+/*	@Autowired
+	private TransactionTemplate transactionTemplate;*/
+	
+	@Autowired
+	private PlatformTransactionManager platformTransactionManager;
+
+	@Override
+	public long insert(CityModel CityModel) {
+		return cityMapper.insert(CityModel);
+	}
+
+	@Override
+	public CityModel queryById(long id) {
+		return cityMapper.queryById(id);
+	}
+
+	@Override
+	public long update(CityModel CityModel) {
+		return cityMapper.update(CityModel);
+	}
+
+	@Override
+	public long delete(long id) {
+		return cityMapper.delete(id);
+	}
+
+	@Override
+	public long batchInsert(Map<String, List<CityModel>> map) {
+		return cityMapper.batchInsert(map);
+	}
+
+	@Override
+	public void batchUpdate(final List<CityModel> list) {
+		
+		// 基于 transactionTemplate 的编程式事务
+/*		transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+			
+			@Override
+			protected void doInTransactionWithoutResult(TransactionStatus status) {
+				CityModel cityModel = new CityModel();
+				cityModel.setProvinceId(500);
+				cityModel.setCityName("上海500");
+				cityModel.setDescription("测试500");
+				cityMapper.insert(cityModel);
+				
+				for(int i=0; i<list.size(); i++){
+					CityModel city = list.get(i);
+					cityMapper.update(city);
+				}
+				
+			}
+		});*/
+		
+		TransactionDefinition definition = new DefaultTransactionDefinition();
+		TransactionStatus status = platformTransactionManager.getTransaction(definition);
+		
+		try{
+			
+			CityModel cityModel = new CityModel();
+			cityModel.setId(110000);
+			cityModel.setName("北京市");
+			cityModel.setPid(0);
+			cityModel.setFirst_letter("B");
+			cityModel.setPinyin("Bei Jing");
+			cityMapper.insert(cityModel);
+			
+			for(int i=0; i<list.size(); i++){
+				CityModel city = list.get(i);
+				cityMapper.update(city);
+			}
+			
+			platformTransactionManager.commit(status);
+			
+		}catch(Exception e){
+			platformTransactionManager.rollback(status);
+			throw new RuntimeException(e);
+		}
+		
+		
+
+	}
+
+}
