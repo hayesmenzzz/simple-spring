@@ -114,7 +114,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         </tx:attributes>
     </tx:advice> 
     <aop:config>
-        <aop:pointcut id="transactionPointcut" expression="execution(* com.seamount.spring.dao.service.impl.serviceImpl..*Impl.*(..))" />
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.seamount.spring.dao.service.impl.*Impl.*(..))" />
         <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
     </aop:config>
 
