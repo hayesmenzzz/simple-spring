@@ -19,7 +19,7 @@ public class MybatisTest {
 	@Test
 	public void cityTest(){
 		CityModel cityModel = new CityModel();
-		cityModel.setId(1);
+		cityModel.setId(3);
 		cityModel.setName("test");
 		cityModel.setPid(1);
 		cityModel.setPinyin("test");

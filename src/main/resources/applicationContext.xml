@@ -9,15 +9,6 @@
 	<context:annotation-config />
 	<context:component-scan base-package="com.seamount.spring" />
 
-	<import resource="configs/spring-mybatis.xml" />
-	<!-- <import resource="spring-snaker.xml" /> -->
-	<!-- <import resource="spring-config.xml" /> -->
-	<!-- <import resource="/drools/kmodule.xml"/> -->
-
-	<!-- <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
-		<property name="locations"> <list> <value>classpath:jdbc.properties</value> 
-		</list> </property> </bean> -->
-
-	<!-- <bean id = "car" class="com.simple.spring.beans.Car"></bean> -->
+	<import resource="spring-mybatis.xml" />
 
 </beans> 

@@ -11,10 +11,12 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.stereotype.Repository;
 
 import com.seamount.spring.dao.model.CityModel;
 
-@MapperScan
+@Repository
+@MapperScan("com.seamount.spring.dao.mapper")
 public interface CityMapper {
 	
 	String columns ="id,name,pid,first_letter,pinyin";
@@ -29,7 +31,7 @@ public interface CityMapper {
 	public long insert(CityModel CityModel);
 	
 	@Select("select "+columns+" from city where 1=1 and id= #{id}")
-	@ResultMap(value="com.quzhigang.mapper.CityMapper.CityModelMap")
+	@ResultMap(value="com.seamount.spring.dao.mapper.CityMapper.CityModelMap")
 	public CityModel queryById(long id);
 	
 	@Update("update city set "+update+" where 1=1 and id = #{id}")
