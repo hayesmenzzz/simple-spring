@@ -7,8 +7,13 @@
                 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.seamount.spring" />
+	
+	<!-- 不扫描Controller注解的原因是，交给Spring MVC管理Controller了 -->
+	<context:component-scan base-package="com.seamount.spring">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 
-	<import resource="spring-mybatis.xml" />
+	<import resource="configs/spring-mybatis.xml" />
+	<import resource="configs/spring-job.xml" />
 
 </beans> 

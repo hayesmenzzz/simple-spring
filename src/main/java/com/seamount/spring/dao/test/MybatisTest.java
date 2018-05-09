@@ -9,7 +9,7 @@ import com.seamount.spring.dao.service.CityService;
 
 public class MybatisTest {
 
-	@Test
+//	@Test
 	public void test(){
 		ApplicationContext context=new ClassPathXmlApplicationContext("classpath:applicationContext.xml");  
 		CityService cityService = (CityService) context.getBean("cityServiceImpl");

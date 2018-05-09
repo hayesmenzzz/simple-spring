@@ -19,11 +19,11 @@ public class MybatisTest {
 	@Test
 	public void cityTest(){
 		CityModel cityModel = new CityModel();
-		cityModel.setId(3);
-		cityModel.setName("test");
+		cityModel.setId(4);
+		cityModel.setName("test1");
 		cityModel.setPid(1);
-		cityModel.setPinyin("test");
-		cityModel.setFirst_letter("test");
+		cityModel.setPinyin("test1");
+		cityModel.setFirst_letter("test1");
 		cityService.insert(cityModel);
 	}
 
