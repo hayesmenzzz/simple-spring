@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<import resource="configs/spring-snaker.xml"/>
+
+	<!-- 不扫描Controller注解的原因是，交给Spring MVC管理Controller了 -->
+	<context:component-scan base-package="com.seamount.spring">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<context:component-scan base-package="com.seamount.spring.snaker" />
+
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder
+		ignore-unresolvable="true" location="classpath*:/*.properties" />
+
+	<import resource="configs/spring-snaker.xml" />
+
+	<!-- 数据源相同的内容 -->
+	<bean name="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+	</bean>
+	<bean parent="parentDataSource" id="dataSource">
+		<property name="url">
+			<value>${ua.jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${ua.jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${ua.jdbc.password}</value>
+		</property>
+		<property name="maxActive">
+			<value>${system.jdbc.maxActive}</value>
+		</property>
+		<property name="initialSize">
+			<value>${system.jdbc.initialSize}</value>
+		</property>
+		<property name="validationQuery">
+			<value>${system.jdbc.validationQuery}</value>
+		</property>
+		<property name="validationQueryTimeout">
+			<value>${system.jdbc.validationQueryTimeout}</value>
+		</property>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<!-- 设置数据源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 设置jdbcTemplate创建的statement查询数据时最大的超时时间,默认0 -->
+		<property name="queryTimeout" value="0" />
+		<!-- 设置底层ResultSet每次从数据库返回的行数,默认0,Oracle默认100 -->
+		<property name="fetchSize" value="0" />
+		<!-- 设置底层ResultSet从数据库返回的最大行数,默认0 -->
+		<property name="maxRows" value="0" />
+		<!-- 是否忽略sql警告信息,默认true,false JdbcTemplate将会抛出SQLWarningException -->
+		<property name="ignoreWarnings" value="true" />
+	</bean>
+
+	<!--如果底层数据库是 DB2、SQL Server、MySQL 等非 Oracle 的其它数据库，则只要简单配置一个 DefaultLobHandler -->
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler"
+		lazy-init="true" />
+
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 注册事务注解处理器 -->
+	<!-- 默认Spring为每个方法开启一个事务,如果方法发生运行期错误unchecked(RuntimeException),事务会进行回滚,如果发生checked 
+		Exception,事务不进行回滚. -->
+	<tx:annotation-driven transaction-manager="txManager" />
+	<!-- Snaker事务配置 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="start*" propagation="REQUIRED" />
+			<tx:method name="execute*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="assign*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="complete*" propagation="REQUIRED" />
+			<tx:method name="finish*" propagation="REQUIRED" />
+			<tx:method name="terminate*" propagation="REQUIRED" />
+			<tx:method name="take*" propagation="REQUIRED" />
+			<tx:method name="deploy*" propagation="REQUIRED" />
+			<tx:method name="undeploy*" propagation="REQUIRED" />
+			<tx:method name="redeploy*" propagation="REQUIRED" />
+
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="search*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="is*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* org.snaker.engine.core..*.*(..))"/>
+	</aop:config>
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+
+
+	<bean id="platformJkLoanApplyService" class="com.seamount.spring.service.PlatformJkLoanApplyServiceImpl"></bean>
+	<bean id="platformJkLoanApplyDao" class="com.seamount.spring.dao.PlatformJkLoanApplyDaoImpl"></bean>
+
+
+</beans> 
