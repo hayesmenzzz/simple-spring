@@ -6,7 +6,7 @@
  *
 */
 
-package com.seamount.spring.service;
+package com.seamount.spring.service.snaker.loan;
 
 import com.seamount.spring.dao.PlatformJkLoanApplyBean;
 

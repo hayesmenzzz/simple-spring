@@ -1,4 +1,4 @@
-package com.seamount.spring.snaker;
+package com.seamount.spring.service.snaker.loan;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.snaker.engine.entity.WorkItem;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.seamount.spring.service.PlatformJkLoanApplyService;
+import com.seamount.spring.snaker.SnakerEngineFacets;
 
 public class ILoanSnakerServiceImpl implements ILoanSnakerService{
 	

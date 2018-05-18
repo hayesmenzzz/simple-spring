@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.snaker.engine.IOrderService;
+import org.snaker.engine.IProcessService;
 import org.snaker.engine.SnakerEngine;
 import org.snaker.engine.access.Page;
 import org.snaker.engine.access.QueryFilter;
@@ -48,12 +49,19 @@ public class SnakerEngineFacets {
 	@Autowired
 	private IOrderService iOrderService;
 	
-	public void initFlows() {
-        engine.process().deploy(StreamHelper.getStreamFromClasspath("configs/loan.snaker"));
+	@Autowired
+	private IProcessService iProcessService;
+	
+	public String initFlows(String snakerPath) {
+        return engine.process().deploy(StreamHelper.getStreamFromClasspath(snakerPath));
 	}
 	
 	public SnakerEngine getEngine() {
 		return engine;
+	}
+	
+	public IProcessService getProcessService() {
+		return iProcessService;
 	}
 	
 	public List<String> getAllProcessNames() {

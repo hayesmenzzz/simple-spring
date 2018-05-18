@@ -16,18 +16,18 @@
 	<import resource="configs/spring-snaker.xml"/>
 
 	<!-- 不扫描Controller注解的原因是，交给Spring MVC管理Controller了 -->
-	<context:component-scan base-package="com.seamount.spring">
+	<context:component-scan base-package="com.seamount.spring.*">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	<context:component-scan base-package="com.seamount.spring.snaker" />
+
 
 
 	<!-- 加载配置属性文件 -->
 	<context:property-placeholder
 		ignore-unresolvable="true" location="classpath*:/*.properties" />
 
-	<import resource="configs/spring-snaker.xml" />
+
 
 	<!-- 数据源相同的内容 -->
 	<bean name="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -119,8 +119,9 @@
 
 
 
-	<bean id="platformJkLoanApplyService" class="com.seamount.spring.service.PlatformJkLoanApplyServiceImpl"></bean>
 	<bean id="platformJkLoanApplyDao" class="com.seamount.spring.dao.PlatformJkLoanApplyDaoImpl"></bean>
+	<bean id="tblLeaveApplyProcessDao" class="com.seamount.spring.dao.TblLeaveApplyProcessDaoImpl"></bean>
+	<bean id="mobileContentDao" class="com.seamount.spring.dao.MobileContentDaoImpl"></bean>
 
 
 </beans> 

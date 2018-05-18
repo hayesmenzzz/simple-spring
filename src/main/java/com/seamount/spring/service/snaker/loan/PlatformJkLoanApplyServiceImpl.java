@@ -6,9 +6,10 @@
  *
 */
 
-package com.seamount.spring.service;
+package com.seamount.spring.service.snaker.loan;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.seamount.spring.dao.PlatformJkLoanApplyBean;
 import com.seamount.spring.dao.PlatformJkLoanApplyDao;
@@ -23,6 +24,7 @@ import com.seamount.spring.dao.PlatformJkLoanApplyDao;
  * @since    JDK 1.8
  * @see 	 
  */
+@Service("platformJkLoanApplyServiceImpl")
 public class PlatformJkLoanApplyServiceImpl implements PlatformJkLoanApplyService {
 	
 	@Autowired

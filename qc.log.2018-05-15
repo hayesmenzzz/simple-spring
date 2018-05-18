@@ -1,0 +1,1106 @@
+=2018-05-15 15:51:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:51:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:51:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29d896d6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4a96d110, org.springframework.test.context.support.DirtiesContextTestExecutionListener@737797b1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@308820b0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@391a1bb4]
+=2018-05-15 15:51:56 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:51:57 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:51:57 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from URL [file:/E:/document/code/Spring-Snaker/simple-spring/target/classes/logback.xml]
+=2018-05-15 15:51:57 ERROR [main] org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:234):
+ Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4a96d110] to prepare test instance [com.seamount.spring.test.SnakerTest@df69935]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from relative location [logback.xml]
+Offending resource: class path resource [applicationContext.xml]; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from URL [file:/E:/document/code/Spring-Snaker/simple-spring/target/classes/logback.xml]; nested exception is java.io.FileNotFoundException: E:\document\code\Spring-Snaker\simple-spring\target\classes\logback.xml (系统找不到指定的文件。)
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:76)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:259)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:169)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:142)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:94)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:392)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from URL [file:/E:/document/code/Spring-Snaker/simple-spring/target/classes/logback.xml]; nested exception is java.io.FileNotFoundException: E:\document\code\Spring-Snaker\simple-spring\target\classes\logback.xml (系统找不到指定的文件。)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:248)
+	... 44 more
+Caused by: java.io.FileNotFoundException: E:\document\code\Spring-Snaker\simple-spring\target\classes\logback.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:97)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.springframework.core.io.UrlResource.getInputStream(UrlResource.java:168)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 48 more
+=2018-05-15 15:52:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:52:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:52:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2eeccf6e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3d2656d3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@200e5602, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d30adbf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76dedd5c]
+=2018-05-15 15:52:13 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:52:13 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:52:13 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@35af4d51: startup date [Tue May 15 15:52:13 CST 2018]; root of context hierarchy
+=2018-05-15 15:52:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 15:52:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 15:52:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 15:52:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 15:52:15 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 15:52:16 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 15:52:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 15:52:16 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 15:52:16 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 15:52:17 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=5f8cd78f57d7428a8a99eecbb8eeb375,名称=请假申请,创建时间=2018-05-15 15:52:17,参与者={;}]
+=2018-05-15 15:52:17 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 15:52:17 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=825a1f4700d34f9a9f404e5d3a61f814,名称=组长审核,创建时间=2018-05-15 15:52:17,参与者={;}]
+=2018-05-15 15:52:17 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:54):
+ 借款流程启动成功！
+=2018-05-15 15:52:17 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:61):
+ taskName:leaderReview     taskId:825a1f4700d34f9a9f404e5d3a61f814
+=2018-05-15 15:52:17 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:100):
+ 申请编号：[1111111111] 启动请假申请流程失败！
+=2018-05-15 15:52:17 ERROR [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:101):
+ 
+=2018-05-15 15:52:17 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@35af4d51: startup date [Tue May 15 15:52:13 CST 2018]; root of context hierarchy
+=2018-05-15 15:52:17 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 15:52:17 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 15:55:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:55:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:55:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bfdbab5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2eeccf6e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d2656d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@200e5602, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d30adbf]
+=2018-05-15 15:55:43 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:55:43 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:55:43 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 15:55:43 CST 2018]; root of context hierarchy
+=2018-05-15 15:55:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 15:55:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 15:55:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 15:55:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 15:55:45 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 15:55:46 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 15:55:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 15:55:46 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 15:55:47 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 15:55:47 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=cb618928847747ca8befdde5db85d0fb,名称=请假申请,创建时间=2018-05-15 15:55:47,参与者={;}]
+=2018-05-15 15:55:48 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 15:55:48 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=be4806876c0247359ed652ba054a2950,名称=组长审核,创建时间=2018-05-15 15:55:48,参与者={;}]
+=2018-05-15 15:55:48 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:54):
+ 借款流程启动成功！
+=2018-05-15 15:55:48 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:61):
+ taskName:leaderReview     taskId:be4806876c0247359ed652ba054a2950
+=2018-05-15 15:55:48 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:100):
+ 申请编号：[1111111111] 启动请假申请流程失败！
+=2018-05-15 15:55:48 ERROR [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:101):
+ 
+=2018-05-15 15:55:48 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 15:55:43 CST 2018]; root of context hierarchy
+=2018-05-15 15:55:48 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 15:55:48 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 15:56:08 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:56:08 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:56:08 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4bfb1305, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@509dd43b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29d896d6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4a96d110, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@737797b1]
+=2018-05-15 15:56:09 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:56:09 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:56:09 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@787bd4fa: startup date [Tue May 15 15:56:09 CST 2018]; root of context hierarchy
+=2018-05-15 15:56:10 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 15:56:10 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 15:56:10 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 15:56:10 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 15:56:11 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 15:56:12 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 15:56:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 15:56:13 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 15:56:13 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 15:56:16 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=5bfab5e40bab4b40828189a617e57fca,名称=请假申请,创建时间=2018-05-15 15:56:16,参与者={;}]
+=2018-05-15 15:56:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 15:56:16 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=8a4c95c8a8904357b28742361871f306,名称=组长审核,创建时间=2018-05-15 15:56:16,参与者={;}]
+=2018-05-15 15:56:16 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:54):
+ 借款流程启动成功！
+=2018-05-15 15:56:16 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:61):
+ taskName:leaderReview     taskId:8a4c95c8a8904357b28742361871f306
+=2018-05-15 15:57:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:57:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:57:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bfdbab5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2eeccf6e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d2656d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@200e5602, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d30adbf]
+=2018-05-15 15:57:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:57:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:57:55 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 15:57:55 CST 2018]; root of context hierarchy
+=2018-05-15 15:57:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 15:57:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 15:57:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 15:57:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 15:57:57 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 15:57:58 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 15:57:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 15:57:58 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 15:57:58 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 15:57:59 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=ea620eb1ccf148dd8d0b6a933d87e778,名称=请假申请,创建时间=2018-05-15 15:57:59,参与者={;}]
+=2018-05-15 15:57:59 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 15:58:00 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=e30584419c24431bac3c213f80c041c9,名称=组长审核,创建时间=2018-05-15 15:57:59,参与者={;}]
+=2018-05-15 15:58:00 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:54):
+ 借款流程启动成功！
+=2018-05-15 15:58:00 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:61):
+ taskName:leaderReview     taskId:e30584419c24431bac3c213f80c041c9
+=2018-05-15 15:58:00 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:100):
+ 申请编号：[1111111111] 启动请假申请流程失败！
+=2018-05-15 15:58:00 ERROR [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:101):
+ 
+=2018-05-15 15:58:00 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 15:57:55 CST 2018]; root of context hierarchy
+=2018-05-15 15:58:00 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 15:58:00 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 15:58:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 15:58:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 15:58:12 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4bfb1305, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@509dd43b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29d896d6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4a96d110, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@737797b1]
+=2018-05-15 15:58:12 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 15:58:12 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 15:58:13 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@9dba6e2: startup date [Tue May 15 15:58:13 CST 2018]; root of context hierarchy
+=2018-05-15 15:58:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 15:58:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 15:58:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 15:58:14 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 15:58:15 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 15:58:16 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 15:58:16 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 15:58:16 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 15:58:16 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 15:58:21 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=a3b32ca87d7d49d69e1866bba33640e4,名称=请假申请,创建时间=2018-05-15 15:58:21,参与者={;}]
+=2018-05-15 15:58:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 15:58:21 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=a7b4427b1e6e48c8aa6e9c8fcfd95bf5,名称=组长审核,创建时间=2018-05-15 15:58:21,参与者={;}]
+=2018-05-15 15:58:21 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:54):
+ 借款流程启动成功！
+=2018-05-15 15:58:21 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:61):
+ taskName:leaderReview     taskId:a7b4427b1e6e48c8aa6e9c8fcfd95bf5
+=2018-05-15 16:01:44 INFO [pool-1-thread-1] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:33):
+ 发送短信：手机号：15555555555，发送的手机内容：您好！申请编号为[1111111111]的请假申请已经流转至您的审批节点，请尽快审批！
+=2018-05-15 16:01:44 INFO [pool-1-thread-1] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:35):
+ 发送结果：true
+=2018-05-15 16:01:44 INFO [pool-1-thread-1] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:36):
+ 结果描述：44193125709006
+=2018-05-15 16:02:00 INFO [pool-1-thread-2] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:33):
+ 发送短信：手机号：18607096005，发送的手机内容：您好！申请编号为[1111111111]的请假申请已经流转至您的审批节点，请尽快审批！
+=2018-05-15 16:02:01 INFO [pool-1-thread-2] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:35):
+ 发送结果：true
+=2018-05-15 16:02:01 INFO [pool-1-thread-2] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:36):
+ 结果描述：36227499847393
+=2018-05-15 16:02:07 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@9dba6e2: startup date [Tue May 15 15:58:13 CST 2018]; root of context hierarchy
+=2018-05-15 16:02:07 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 16:02:07 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 17:30:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 17:30:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 17:30:54 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5f0ab5d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7b8269b6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2eea6b13, org.springframework.test.context.transaction.TransactionalTestExecutionListener@201bc475, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7efeedca]
+=2018-05-15 17:30:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 17:30:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 17:30:55 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@255e4373: startup date [Tue May 15 17:30:55 CST 2018]; root of context hierarchy
+=2018-05-15 17:30:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 17:30:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 17:30:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 17:30:56 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 17:30:57 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 17:30:58 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 17:30:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 17:30:58 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 17:30:58 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 17:30:59 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 17:30:59 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ 89fce03d71444cdd9f23677eb4fdfc5d->decision execution.getArgs():{rode=LEADER_AGREE, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 17:30:59 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@16deb187
+=2018-05-15 17:30:59 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ 89fce03d71444cdd9f23677eb4fdfc5d->decision expression[expr=] return result:null
+=2018-05-15 17:30:59 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:167):
+ 请假流程流转失败,申请编号：1111111111 taskId:e30584419c24431bac3c213f80c041c9
+=2018-05-15 17:30:59 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@255e4373: startup date [Tue May 15 17:30:55 CST 2018]; root of context hierarchy
+=2018-05-15 17:30:59 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 17:30:59 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 17:48:46 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 17:48:46 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 17:48:46 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bfdbab5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2eeccf6e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d2656d3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@200e5602, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d30adbf]
+=2018-05-15 17:48:46 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 17:48:47 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 17:48:47 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 17:48:47 CST 2018]; root of context hierarchy
+=2018-05-15 17:48:48 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 17:48:48 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 17:48:48 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 17:48:48 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 17:48:49 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 17:48:50 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 17:48:50 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 17:48:50 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 17:48:50 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 17:48:51 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 17:48:47 CST 2018]; root of context hierarchy
+=2018-05-15 17:48:51 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 17:48:51 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 17:50:07 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 17:50:07 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 17:50:07 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@40800a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16392c27, org.springframework.test.context.support.DirtiesContextTestExecutionListener@381bfd7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3b59be0d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@cc65ec]
+=2018-05-15 17:50:08 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 17:50:08 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 17:50:08 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 17:50:08 CST 2018]; root of context hierarchy
+=2018-05-15 17:50:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 17:50:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 17:50:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 17:50:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 17:50:10 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 17:50:11 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 17:50:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 17:50:11 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 17:50:11 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 17:50:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 17:50:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ c574bd06b749448f9db916e490be482f->decision execution.getArgs():{rode=LEADER_AGREE, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 17:50:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@16deb187
+=2018-05-15 17:50:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ c574bd06b749448f9db916e490be482f->decision expression[expr=] return result:null
+=2018-05-15 17:50:12 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:167):
+ 请假流程流转失败,申请编号：1111111111 taskId:a7b4427b1e6e48c8aa6e9c8fcfd95bf5
+=2018-05-15 17:50:12 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 17:50:08 CST 2018]; root of context hierarchy
+=2018-05-15 17:50:12 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 17:50:12 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 17:54:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 17:54:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 17:54:42 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@40800a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16392c27, org.springframework.test.context.support.DirtiesContextTestExecutionListener@381bfd7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3b59be0d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@cc65ec]
+=2018-05-15 17:54:42 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 17:54:42 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 17:54:43 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 17:54:43 CST 2018]; root of context hierarchy
+=2018-05-15 17:54:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 17:54:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 17:54:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 17:54:44 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 17:54:45 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 17:54:45 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 17:54:45 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 17:54:45 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 17:54:46 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 17:54:46 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 17:54:46 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 17:54:47 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 17:54:47 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ c574bd06b749448f9db916e490be482f->decision execution.getArgs():{rode=leaderAgree, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 17:54:47 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@7617f67f
+=2018-05-15 17:54:47 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ c574bd06b749448f9db916e490be482f->decision expression[expr=] return result:null
+=2018-05-15 17:54:47 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:167):
+ 请假流程流转失败,申请编号：1111111111 taskId:a7b4427b1e6e48c8aa6e9c8fcfd95bf5
+=2018-05-15 17:54:47 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 17:54:43 CST 2018]; root of context hierarchy
+=2018-05-15 17:54:47 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 17:54:47 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 17:58:04 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 17:58:04 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 17:58:04 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2eeccf6e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3d2656d3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@200e5602, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d30adbf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76dedd5c]
+=2018-05-15 17:58:05 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 17:58:05 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 17:58:05 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@35af4d51: startup date [Tue May 15 17:58:05 CST 2018]; root of context hierarchy
+=2018-05-15 17:58:06 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 17:58:06 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 17:58:06 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 17:58:06 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 17:58:07 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 17:58:08 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 17:58:08 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 17:58:08 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 17:58:08 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 17:58:09 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@35af4d51: startup date [Tue May 15 17:58:05 CST 2018]; root of context hierarchy
+=2018-05-15 17:58:09 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 17:58:09 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:00:07 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:00:08 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:00:08 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@40800a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16392c27, org.springframework.test.context.support.DirtiesContextTestExecutionListener@381bfd7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3b59be0d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@cc65ec]
+=2018-05-15 18:00:08 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:00:08 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:00:08 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@73e7b6b9: startup date [Tue May 15 18:00:08 CST 2018]; root of context hierarchy
+=2018-05-15 18:00:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:00:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:00:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:00:09 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:00:10 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:00:11 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:00:11 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:00:11 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:00:11 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:00:12 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:00:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ c574bd06b749448f9db916e490be482f->decision execution.getArgs():{rode=leaderAgree, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 18:00:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@5c2a3f7a
+=2018-05-15 18:00:12 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ c574bd06b749448f9db916e490be482f->decision expression[expr=] return result:null
+=2018-05-15 18:00:12 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:167):
+ 请假流程流转失败,申请编号：1111111111 taskId:a7b4427b1e6e48c8aa6e9c8fcfd95bf5
+=2018-05-15 18:00:12 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@73e7b6b9: startup date [Tue May 15 18:00:08 CST 2018]; root of context hierarchy
+=2018-05-15 18:00:12 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:00:12 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:03:17 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:03:17 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:03:17 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@172d40de, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1bfdbab5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2eeccf6e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d2656d3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@200e5602]
+=2018-05-15 18:03:17 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:03:18 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:03:18 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@29928b7c: startup date [Tue May 15 18:03:18 CST 2018]; root of context hierarchy
+=2018-05-15 18:03:19 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:03:19 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:03:19 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:03:19 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:03:20 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:03:21 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:03:21 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:03:21 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:03:21 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:03:22 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=e684d5e5063140358bbcf079223d7064,名称=请假申请,创建时间=2018-05-15 18:03:22,参与者={;}]
+=2018-05-15 18:03:22 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:03:22 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=b78f4d214042428c924750aa54c1215e,名称=组长审核,创建时间=2018-05-15 18:03:22,参与者={;}]
+=2018-05-15 18:03:22 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:56):
+ 借款流程启动成功！
+=2018-05-15 18:03:22 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:64):
+ taskName:leaderReview     taskId:b78f4d214042428c924750aa54c1215e
+=2018-05-15 18:03:22 INFO [pool-1-thread-2] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:33):
+ 发送短信：手机号：18607096005，发送的手机内容：您好！申请编号为[1111111111]的请假申请已经流转至您的审批节点，请尽快审批！
+=2018-05-15 18:03:22 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@29928b7c: startup date [Tue May 15 18:03:18 CST 2018]; root of context hierarchy
+=2018-05-15 18:03:22 INFO [pool-1-thread-1] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:33):
+ 发送短信：手机号：18607096005，发送的手机内容：您好！申请编号为[1111111111]的请假申请已经流转至您的审批节点，请尽快审批！
+=2018-05-15 18:03:22 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:03:22 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:03:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:03:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:03:56 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@40800a9e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16392c27, org.springframework.test.context.support.DirtiesContextTestExecutionListener@381bfd7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3b59be0d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@cc65ec]
+=2018-05-15 18:03:56 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:03:57 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:03:57 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 18:03:57 CST 2018]; root of context hierarchy
+=2018-05-15 18:03:58 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:03:58 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:03:58 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:03:58 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:03:59 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:04:00 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:04:00 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:04:00 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:04:00 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:04:01 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:04:01 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ 87dc6bfc44d245d6892aea020501a222->decision execution.getArgs():{rode=leaderAgree, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 18:04:01 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@2661b097
+=2018-05-15 18:04:01 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ 87dc6bfc44d245d6892aea020501a222->decision expression[expr=#rode] return result:leaderAgree
+=2018-05-15 18:04:01 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=c90c54777c56442eab115db5d9a6595c,名称=经理审批,创建时间=2018-05-15 18:04:01,参与者={;}]
+=2018-05-15 18:04:01 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:174):
+ 请假流程流转失败,申请编号：1111111111 taskId:b78f4d214042428c924750aa54c1215e
+=2018-05-15 18:04:01 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@70729a2b: startup date [Tue May 15 18:03:57 CST 2018]; root of context hierarchy
+=2018-05-15 18:04:01 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:04:01 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:04:50 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:04:51 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:04:51 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bd5b1dc, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a8ff0ca, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1009946e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64efc9fb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3ab5b182]
+=2018-05-15 18:04:51 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:04:51 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:04:51 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@3ba8be19: startup date [Tue May 15 18:04:51 CST 2018]; root of context hierarchy
+=2018-05-15 18:04:52 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:04:52 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:04:52 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:04:52 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:04:53 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:04:55 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:04:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:04:55 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:04:55 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:04:55 ERROR [main] org.snaker.engine.spring.SpringJdbcAccess.queryObject(SpringJdbcAccess.java:113):
+ 查询单条数据=
+Incorrect result size: expected 1, actual 0
+=2018-05-15 18:04:55 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:174):
+ 请假流程流转失败,申请编号：1111111111 taskId:b78f4d214042428c924750aa54c1215e
+=2018-05-15 18:04:55 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@3ba8be19: startup date [Tue May 15 18:04:51 CST 2018]; root of context hierarchy
+=2018-05-15 18:04:55 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:04:55 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:06:26 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:06:27 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:06:27 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bd5b1dc, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a8ff0ca, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1009946e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64efc9fb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3ab5b182]
+=2018-05-15 18:06:27 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:06:27 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:06:28 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@36c6e417: startup date [Tue May 15 18:06:28 CST 2018]; root of context hierarchy
+=2018-05-15 18:06:29 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:06:29 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:06:29 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:06:29 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:06:30 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:06:31 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:06:31 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:06:31 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:06:31 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:06:32 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:06:32 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ c574bd06b749448f9db916e490be482f->decision execution.getArgs():{rode=leaderAgree, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 18:06:32 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@4f452a49
+=2018-05-15 18:06:32 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ c574bd06b749448f9db916e490be482f->decision expression[expr=] return result:null
+=2018-05-15 18:06:32 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:174):
+ 请假流程流转失败,申请编号：1111111111 taskId:a7b4427b1e6e48c8aa6e9c8fcfd95bf5
+=2018-05-15 18:06:32 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@36c6e417: startup date [Tue May 15 18:06:28 CST 2018]; root of context hierarchy
+=2018-05-15 18:06:32 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:06:32 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:10:53 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:10:53 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:10:53 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@172d40de, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1bfdbab5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2eeccf6e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d2656d3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@200e5602]
+=2018-05-15 18:10:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:10:54 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:10:54 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 18:10:54 CST 2018]; root of context hierarchy
+=2018-05-15 18:10:55 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:10:55 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:10:55 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:10:55 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:10:56 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:10:57 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:10:57 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:10:57 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:10:57 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:10:58 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=18261d7b04c448de9c5b2f5829cb014a,名称=请假申请,创建时间=2018-05-15 18:10:58,参与者={;}]
+=2018-05-15 18:10:58 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:10:58 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=b3bc6aa099e04c95bd4e42a269c31ad4,名称=组长审核,创建时间=2018-05-15 18:10:58,参与者={;}]
+=2018-05-15 18:10:58 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:56):
+ 借款流程启动成功！
+=2018-05-15 18:10:58 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.startProcess(LeaveSnakerServiceImpl.java:64):
+ taskName:leaderReview     taskId:b3bc6aa099e04c95bd4e42a269c31ad4
+=2018-05-15 18:10:58 INFO [pool-1-thread-1] com.seamount.spring.support.SendMessageUtils.sendMobiMessage(SendMessageUtils.java:33):
+ 发送短信：手机号：18607096005，发送的手机内容：您好！申请编号为[1111111111]的请假申请已经流转至您的审批节点，请尽快审批！
+=2018-05-15 18:10:58 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@54038f36: startup date [Tue May 15 18:10:54 CST 2018]; root of context hierarchy
+=2018-05-15 18:10:58 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:10:58 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed
+=2018-05-15 18:11:51 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getDefaultTestExecutionListenerClassNames(AbstractTestContextBootstrapper.java:260):
+ Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+=2018-05-15 18:11:51 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.instantiateListeners(AbstractTestContextBootstrapper.java:209):
+ Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+=2018-05-15 18:11:51 INFO [main] org.springframework.test.context.support.AbstractTestContextBootstrapper.getTestExecutionListeners(AbstractTestContextBootstrapper.java:187):
+ Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@308820b0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@391a1bb4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6110e3b5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1bd5b1dc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6a8ff0ca]
+=2018-05-15 18:11:51 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [applicationContext.xml]
+=2018-05-15 18:11:51 INFO [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317):
+ Loading XML bean definitions from class path resource [configs/spring-snaker.xml]
+=2018-05-15 18:11:52 INFO [main] org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:581):
+ Refreshing org.springframework.context.support.GenericApplicationContext@202b723c: startup date [Tue May 15 18:11:52 CST 2018]; root of context hierarchy
+=2018-05-15 18:11:53 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\application.properties]
+=2018-05-15 18:11:53 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\document\code\Spring-Snaker\simple-spring\target\classes\log4j.properties]
+=2018-05-15 18:11:53 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\383\0\.cp\plugin.properties]
+=2018-05-15 18:11:53 INFO [main] org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172):
+ Loading properties file from file [E:\Eclipse\eclipse\configuration\org.eclipse.osgi\382\0\.cp\plugin.properties]
+=2018-05-15 18:11:54 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-1} inited
+=2018-05-15 18:11:55 WARN [main] org.snaker.engine.helper.ConfigHelper.loadProperties(ConfigHelper.java:98):
+ No properties file found in the classpath by filename snaker.properties
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=start][clazz=org.snaker.engine.parser.impl.StartParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=task][clazz=org.snaker.engine.parser.impl.TaskParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=custom][clazz=org.snaker.engine.parser.impl.CustomParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=decision][clazz=org.snaker.engine.parser.impl.DecisionParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=subprocess][clazz=org.snaker.engine.parser.impl.SubProcessParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=fork][clazz=org.snaker.engine.parser.impl.ForkParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=join][clazz=org.snaker.engine.parser.impl.JoinParser]
+=2018-05-15 18:11:55 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=end][clazz=org.snaker.engine.parser.impl.EndParser]
+=2018-05-15 18:11:55 ERROR [main] com.alibaba.druid.pool.DruidDataSource.validationQueryCheck(DruidDataSource.java:809):
+ testWhileIdle is true, validationQuery not set
+=2018-05-15 18:11:55 INFO [main] com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:669):
+ {dataSource-2} inited
+=2018-05-15 18:11:56 INFO [main] org.snaker.engine.core.ServiceContext.put(ServiceContext.java:93):
+ put new instance[name=org.snaker.engine.Completion][clazz=org.snaker.engine.impl.GeneralCompletion]
+=2018-05-15 18:11:56 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:56):
+ f4cd628333ce45e789adaf1147ed7d6d->decision execution.getArgs():{rode=leaderAgree, leaderReview=leaderReviewRole, businessId=1111111111, leaveApply=leaveApplyRole, managerApproval=managerReviewRole}
+=2018-05-15 18:11:56 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:60):
+ expression is org.snaker.engine.spring.SpelExpression@37023619
+=2018-05-15 18:11:56 INFO [main] org.snaker.engine.model.DecisionModel.exec(DecisionModel.java:68):
+ f4cd628333ce45e789adaf1147ed7d6d->decision expression[expr=#rode] return result:leaderAgree
+=2018-05-15 18:11:56 INFO [main] org.snaker.engine.impl.LogInterceptor.intercept(LogInterceptor.java:47):
+ 创建任务[标识=cf929308715b4664b857942b07f62a36,名称=经理审批,创建时间=2018-05-15 18:11:56,参与者={;}]
+=2018-05-15 18:13:43 INFO [main] com.seamount.spring.service.snaker.leave.LeaveSnakerServiceImpl.runProcess(LeaveSnakerServiceImpl.java:174):
+ 请假流程流转失败,申请编号：1111111111 taskId:b3bc6aa099e04c95bd4e42a269c31ad4
+=2018-05-15 18:13:47 INFO [Thread-6] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:982):
+ Closing org.springframework.context.support.GenericApplicationContext@202b723c: startup date [Tue May 15 18:11:52 CST 2018]; root of context hierarchy
+=2018-05-15 18:13:47 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-2} closed
+=2018-05-15 18:13:47 INFO [Thread-6] com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1385):
+ {dataSource-1} closed

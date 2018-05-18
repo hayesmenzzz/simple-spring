@@ -1,4 +1,4 @@
-package com.seamount.spring.snaker;
+package com.seamount.spring.service.snaker.loan;
 
 import java.util.List;
 import java.util.Map;
