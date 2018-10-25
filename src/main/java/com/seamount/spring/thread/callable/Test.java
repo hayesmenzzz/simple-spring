@@ -1,4 +1,6 @@
-package com.seamount.spring.thread;
+package com.seamount.spring.thread.callable;
+
+import com.seamount.spring.thread.callable.MyCallable;
 
 import java.util.ArrayList;
 import java.util.Date;

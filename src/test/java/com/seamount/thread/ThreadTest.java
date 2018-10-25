@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.seamount.spring.thread.MyThread;
-import com.seamount.spring.thread.MyThread01;
+import com.seamount.spring.thread.callable.MyThread;
+import com.seamount.spring.thread.callable.MyThread01;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")

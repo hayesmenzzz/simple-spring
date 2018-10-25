@@ -1,4 +1,4 @@
-package com.seamount.spring.thread;
+package com.seamount.spring.thread.callable;
 
 import java.util.Random;
 import java.util.concurrent.Callable;

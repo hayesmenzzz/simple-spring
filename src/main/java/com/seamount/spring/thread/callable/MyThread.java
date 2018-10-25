@@ -1,4 +1,4 @@
-package com.seamount.spring.thread;
+package com.seamount.spring.thread.callable;
 
 public class MyThread extends Thread{
 
