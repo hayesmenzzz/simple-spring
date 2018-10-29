@@ -71,7 +71,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         value="classpath:me/gacl/mapping/*.xml"指的是classpath(类路径)下me.gacl.mapping包中的所有xml文件
         UserMapper.xml位于me.gacl.mapping包下，这样UserMapper.xml就可以被自动扫描
          -->
-        <property name="mapperLocations" value="mybatis/*.xml" />
+        <property name="mapperLocations" value="classpath:mybatis/*.xml" />
     </bean>
     <!-- 配置扫描器 它可以将接口转换为Spring容器中的Bean 在Service中@Autowired的方法直接注入接口实例-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
