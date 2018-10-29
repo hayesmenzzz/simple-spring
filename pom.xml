@@ -76,8 +76,13 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.12</version>
 		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 	<build>
 		<!-- 局部配置某个项目 指定jdk版本 -->
 		<!-- <build>
