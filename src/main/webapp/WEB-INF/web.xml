@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     version="3.0">
-	<display-name>Archetype Created Web Application</display-name>
+	<display-name>Seamount's Springs</display-name>
 
-	<!-- 加载Spring配置文件 -->
+	<!-- 全局加载Spring配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<!-- <param-value>classpath:/configs/spring-*.xml</param-value> --><!-- -->
@@ -23,11 +23,14 @@
 		<!-- 自定义spring mvc的配置文件名称和路径 -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath*:spring-servlet.xml</param-value>
+			<param-value>classpath*:configs/spring-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<!-- spring mvc 请求后缀 -->
+	<!-- spring mvc
+		< url-pattern>/</url-pattern>  会匹配到/login这样的路径型url，不会匹配到模式为*.jsp这样的后缀型url
+		< url-pattern>/*</url-pattern> 会匹配所有url：路径型的和后缀型的url(包括/login,*.jsp,*.js和*.html等)
+		请求后缀 -->
 	<servlet-mapping>
 		<servlet-name>Dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
