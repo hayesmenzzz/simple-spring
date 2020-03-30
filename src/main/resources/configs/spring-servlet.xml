@@ -41,4 +41,23 @@
 				<bean class="com.seamount.spring.filter.Interceptor3"/>
 			</mvc:interceptor>
 		</mvc:interceptors>
+
+	<!-- 篡改 StringHttpMessageConverter编码 也可以封装response接口 esponse.setCharacterEncoding("UTF-8");
+	        如果返回对象 默认转成json-->
+	<!-- SpringMVC注解驱动 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/plain;charset=utf-8</value>
+						<value>text/html;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
 </beans>

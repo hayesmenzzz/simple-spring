@@ -25,8 +25,8 @@ public class ThreadTest {
 	@Test
 	public void test() {
 
-		MyThread myThread1 = new MyThread();
-		MyThread myThread2 = new MyThread();
+		MyThread myThread1 = new MyThread("myThread1");
+		MyThread myThread2 = new MyThread("myThread2");
 		myThread1.start();
 		myThread2.start();
 

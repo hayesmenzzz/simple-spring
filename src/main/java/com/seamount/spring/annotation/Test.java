@@ -25,5 +25,6 @@ public class Test {
 		List<Integer> userCase = new ArrayList<Integer>();
 		Collections.addAll(userCase, 47, 48, 49, 50);
 		trackUseCases(userCase, PasswordUtils.class);
+
 	}
 }

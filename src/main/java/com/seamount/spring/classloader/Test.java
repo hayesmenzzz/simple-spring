@@ -1,5 +1,7 @@
 package com.seamount.spring.classloader;
 
+import org.springframework.context.ApplicationContext;
+
 public class Test {
 
 	private static void loadClass() throws ClassNotFoundException {
@@ -29,6 +31,5 @@ public class Test {
 		// loadClass();
 //		printParent();
 		loadClass01();
-		
 	}
 }
